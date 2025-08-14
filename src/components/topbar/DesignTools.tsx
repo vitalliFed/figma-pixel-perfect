@@ -1,5 +1,5 @@
 import Switch from "@/assets/icons/Switch.svg";
-import Keyframes from "@/assets/icons/Keyframes.svg";
+import Keyframes from "@/assets/icons/keyframes.svg";
 import DesignNib from "@/assets/icons/design-nib.svg";
 
 export default function DesignTools() {
