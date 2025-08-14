@@ -1,6 +1,6 @@
-import ChatPanel from "./components/ChatPanel";
-import TopBar from "./components/TopBar";
-import WebsitePreview from "./components/WebsitePreview";
+import ChatPanel from "./components/chatpanel/ChatPanel";
+import TopBar from "./components/topbar/TopBar";
+import WebsitePreview from "./components/websitepreview/WebsitePreview";
 import "./styles/fonts.css";
 
 function App() {
