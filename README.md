@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Chat Interface
 
-Currently, two official plugins are available:
+**React + TypeScript + Vite** modular chat interface with enterprise-level architecture.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick Start
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Scripts
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+npm run dev - Development server
+npm run build - Production build
+npm run preview - Preview build
+src/
+├── components/
+│   ├── topbar/
+│   │   ├── TopBar.tsx
+│   │   ├── DesignTools.tsx
+│   │   ├── VariantDropdown.tsx
+│   │   ├── DeviceSelector.tsx
+│   │   ├── UndoRedoButtons.tsx
+│   │   └── ActionButtons.tsx
+│   ├── chatheader/
+│   │   ├── ChatHeader.tsx
+│   │   ├── PageSelector.tsx
+│   │   ├── DropdownMenu.tsx
+│   │   └── DropdownItem.tsx
+│   ├── chatpanel/
+│   │   ├── ChatPanel.tsx
+│   │   ├── ChatLayout.tsx
+│   │   ├── MessagesArea.tsx
+│   │   └── ChatControls.tsx
+│   ├── chatmessage/
+│   │   ├── ChatMessage.tsx
+│   │   ├── MessageContainer.tsx
+│   │   ├── MessageLayout.tsx
+│   │   ├── MessageAvatar.tsx
+│   │   └── MessageBubble.tsx
+│   ├── promptinput/
+│   │   ├── PromptInput.tsx
+│   │   ├── PromptInputContainer.tsx
+│   │   ├── PromptInputLayout.tsx
+│   │   ├── AutoResizeTextarea.tsx
+│   │   └── InputControls.tsx
+│   ├── attachmentmenu/
+│   │   ├── AttachmentMenu.tsx
+│   │   ├── AttachmentMenuContainer.tsx
+│   │   ├── MenuDropdown.tsx
+│   │   ├── MenuTrigger.tsx
+│   │   └── MenuItem.tsx
+│   └── ui/
+│       └── button.tsx
+├── hooks/
+│   ├── useChatMessages.ts
+│   └── usePromptInput.ts
+├── types/
+│   ├── index.ts
+│   ├── topbar.ts
+│   ├── chatheader.ts
+│   ├── chatpanel.ts
+│   ├── chatmessage.ts
+│   ├── promptinput.ts
+│   └── attachmentmenu.ts
+├── data/
+│   ├── mockMessages.ts
+│   └── attachmentMenuItems.ts
+├── utils/
+│   └── messageUtils.ts
+└── assets/
+    └── icons/
